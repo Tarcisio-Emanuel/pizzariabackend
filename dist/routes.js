@@ -5,7 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.router = void 0;
 const express_1 = require("express");
-// imagem
+// imagem ////
 const multer_1 = __importDefault(require("multer"));
 const CreateUserControllers_1 = require("./controllers/user/CreateUserControllers");
 const AuthUserController_1 = require("./controllers/user/AuthUserController");
