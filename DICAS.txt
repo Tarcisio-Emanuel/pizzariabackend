@@ -60,6 +60,22 @@ yarn add @types/multer -D
 ..........DEPLOY..........
 ..........................
 
+
+
+
+"scripts":{
+    "build": "tsc --build",
+    "start": "node dist/server.js",
+    "vercel-build":"prisma generate && prisma migrate deploy",
+    "prisma:generate": "prisma generate"
+}
+
+no tsconfig ===> "outDir": "./dist",
+
+npm run build
+
+
+
 cloudinary imagens guardadas
 https://console.cloudinary.com/pm/c-9358a3fccc9b99d5d73b6cea6289ac/getting-started
 
