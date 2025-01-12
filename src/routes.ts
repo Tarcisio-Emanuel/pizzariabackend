@@ -25,7 +25,7 @@ const router = Router();
 const upload = multer(uploadConfig.upload("./tmp"))
 
 //-- ROTAS USER --
-router.post('/users', new CreateUserController().handle)
+router.post('/users',isAuthenticated, new CreateUserController().handle)
 // -- ROTA DE LOGIN
 router.post('/session', new AuthUserController().handle)
 router.get('/me', isAuthenticated, new DetailUserController().handle)
