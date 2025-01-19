@@ -61,7 +61,7 @@ yarn add @types/multer -D
 ..........................
 
 
-
+DICAS
 
 "scripts":{
     "build": "tsc --build",
@@ -69,7 +69,6 @@ yarn add @types/multer -D
     "vercel-build":"prisma generate && prisma migrate deploy",
     "prisma:generate": "prisma generate"
 }
-
 no tsconfig ===> "outDir": "./dist",
 
 npm run build
