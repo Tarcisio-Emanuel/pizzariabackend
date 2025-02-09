@@ -19,6 +19,7 @@ const AddItemController_1 = require("./controllers/order/AddItemController");
 const RemoveItemController_1 = require("./controllers/order/RemoveItemController");
 const SendOrderController_1 = require("./controllers/order/SendOrderController");
 const ListOrderController_1 = require("./controllers/order/ListOrderController");
+const ListByCategoryController_1 = require("./controllers/product/ListByCategoryController");
 const multer_2 = __importDefault(require("./config/multer"));
 const DetailOrderController_1 = require("./controllers/order/DetailOrderController");
 const FinishOrderController_1 = require("./controllers/order/FinishOrderController");
@@ -26,7 +27,7 @@ const router = (0, express_1.Router)();
 exports.router = router;
 const upload = (0, multer_1.default)(multer_2.default.upload("./tmp"));
 //-- ROTAS USER --
-router.post('/users', isAuthenticated_1.isAuthenticated, new CreateUserController_1.CreateUserController().handle);
+router.post('/users', new CreateUserController_1.CreateUserController().handle);
 // -- ROTA DE LOGIN
 router.post('/session', new AuthUserController_1.AuthUserController().handle);
 router.get('/me', isAuthenticated_1.isAuthenticated, new DetailUserController_1.DetailUserController().handle);
@@ -35,8 +36,8 @@ router.post('/category', isAuthenticated_1.isAuthenticated, new CreateCategoryCo
 router.get('/category', isAuthenticated_1.isAuthenticated, new ListCategoryController_1.ListCategoryController().handle);
 //   -- Rotas produtos
 // router.post('/product', isAuthenticated, upload.single('file'), new CreateProductController().handle)
-router.post('/product', isAuthenticated_1.isAuthenticated, new CreateProductController_1.CreateProductController().handle);
-router.get('/category/product', isAuthenticated_1.isAuthenticated, upload.single('file'), new ListCategoryController_1.ListCategoryController().handle);
+router.post('/product', isAuthenticated_1.isAuthenticated, upload.single('file'), new CreateProductController_1.CreateProductController().handle);
+router.get('/category/product', isAuthenticated_1.isAuthenticated, new ListByCategoryController_1.ListByCategoryController().handle);
 //  --ROTAS ORDER
 router.post('/order', isAuthenticated_1.isAuthenticated, new CreateOrderController_1.CreateOrderController().handle);
 router.delete('/order', isAuthenticated_1.isAuthenticated, new RemoveOrderController_1.RemoveOrderController().handle);

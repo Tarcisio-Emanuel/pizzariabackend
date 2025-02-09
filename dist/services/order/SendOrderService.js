@@ -17,7 +17,7 @@ const prisma_1 = __importDefault(require("../../prisma"));
 class SendOrderService {
     execute({ order_id }) {
         return __awaiter(this, void 0, void 0, function* () {
-            const enviarPedido = yield prisma_1.default.order.update({
+            const order = yield prisma_1.default.order.update({
                 where: {
                     id: order_id
                 },
@@ -25,7 +25,7 @@ class SendOrderService {
                     draft: false
                 }
             });
-            return enviarPedido;
+            return order;
         });
     }
 }

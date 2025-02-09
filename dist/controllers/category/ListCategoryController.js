@@ -14,8 +14,8 @@ const ListCategorySrever_1 = require("../../services/category/ListCategorySrever
 class ListCategoryController {
     handle(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const createCategoryService = new ListCategorySrever_1.ListCategoryService();
-            const category = yield createCategoryService.execute();
+            const listCategoryService = new ListCategorySrever_1.ListCategoryService();
+            const category = yield listCategoryService.execute();
             return res.json(category);
         });
     }
